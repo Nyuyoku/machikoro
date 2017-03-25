@@ -17,6 +17,9 @@ const reducer = (state=null, action) => {
 
     case 'FETCH_GAME':
       return action.game
+
+    case 'GET_WINNER':
+      return action.user.name
   }
 
   return state
@@ -40,6 +43,12 @@ export const fetchingGame = game => ({
   type: FETCH_GAME, game
 })
 
+const GET_WINNER = 'GET_WINNER'
+
+export const gettingWinner = user => ({
+  type: GET_WINNER, user
+})
+
 export const createGame = () => {
   return dispatch =>
     axios.post('/api/lobby/')
@@ -59,6 +68,7 @@ export const fetchGame = (game) => {
       .then((uniqueGame) => {
         let id = uniqueGame.data.id
 
+        // fetching game will replace setting game?
         database.child(id).on('value', snap => {
           dispatch(fetchingGame(snap.val()))
         })
@@ -68,5 +78,17 @@ export const fetchGame = (game) => {
       .catch(console.error)
   }
 }
+
+// update game with winner
+// export const getWinner = (game, user) => {
+//   return dispatch => {
+//     axios.put(`/api/game/${game.gameLink}`, {winner: user.name})
+//     .then(uniqueGame => {
+//       const winner = uniqueGame.data.winner
+//       dispatch(gettingWinner(winner))
+//     })
+//     .catch(console.error)
+//   }
+// }
 
 export default reducer

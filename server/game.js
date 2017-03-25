@@ -17,3 +17,18 @@ api.get('/:gameLink', (req, res, next) => {
   })
   .catch(next)
 })
+
+// write route to update winner of game
+// api.put('/:gameLink', (req, res, next) => {
+//   Game.findOne({
+//     where: {
+//       gameLink: req.params.gameLink
+//     }
+//   })
+//   .then(game => {
+//     return game.update({
+//       winner: req.user.name
+//     })
+//   })
+//   .catch(next)
+// })
