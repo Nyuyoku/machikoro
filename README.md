@@ -8,7 +8,7 @@ You can find our deployed game at: https://nyuyoku.herokuapp.com/
 
 
 ## How
-This project was developed by Anne Zhou, Andrea Cornaglia, Raina Jacobskind & Susan Flanagan as part of our capstone project at Grace Hopper program at Fullstack Academy. We develop the app in a week and a half (March 2017)
+This project was developed by Anne Zhou, Andrea Cornaglia, Raina Jacobskind & Susan Flanagan as part of our capstone project at Grace Hopper program at Fullstack Academy. We developed the app in a week and a half (March 2017)
 
 ## Technologies
 
